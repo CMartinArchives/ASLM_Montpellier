@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Les fauteuils de l’Académie · Montpellier</title><meta name="description" content="Explorer les membres de l’Académie des sciences et lettres de Montpellier au fil des années."><link rel="stylesheet" href="style.css"><script src="data.js" defer></script><script src="app.js" defer></script></head>
+<body>
+<header><p class="eyebrow">Montpellier · Histoire des savoirs</p><h1>Les fauteuils<br>de l’Académie</h1><p class="intro">Parcourir les années, retrouver les noms.<br>Une exploration de l’Académie des sciences et lettres de Montpellier.</p></header>
+<main>
+<section class="controls" aria-label="Choix de la période">
+ <div class="year-controls"><button id="previous" aria-label="Année précédente">−</button><label for="year">Année <input id="year" type="number" min="1847" max="2026" value="1900"></label><button id="next" aria-label="Année suivante">+</button></div>
+ <input id="timeline" type="range" min="1847" max="2026" value="1900" aria-label="Parcourir les années">
+ <div class="range-labels"><span>1847</span><button id="reset">Revenir à 1900</button><span>2026</span></div>
+</section>
+<div class="toolbar"><label>Section <select id="section"><option>Toutes les sections</option><option>Médecine</option><option>Sciences</option><option>Lettres</option></select></label><p id="summary" role="status"></p></div>
+<p class="legend"><span class="dot"></span> Occupation reconstituée <span class="dot empty"></span> Non renseigné <span class="dot uncertain"></span> Plusieurs noms possibles</p>
+<div id="seating"></div>
+<details class="method"><summary>Comment lire cette représentation ?</summary><p>Pour chaque fauteuil, le dernier élu connu est affiché à partir de son année d’élection jusqu’à l’élection suivante. L’année du changement, le nouveau nom apparaît. Ce choix peut masquer des vacances et prolonger l’affichage après un décès ou un passage à l’honorariat. « Non renseigné » ne signifie pas « vacant ».</p><p>Les transferts documentés dans le tableur sont pris en compte ; les divergences de dates sont signalées dans les fiches. Lorsque plusieurs personnes ont la même année d’entrée au même fauteuil, elles sont toutes affichées : leur ordre ne peut pas être déterminé avec ces seules données.</p><p>La disposition des sièges est schématique, sans correspondance avec une salle réelle. Les fauteuils sans titulaire connu pour l’année choisie restent visibles. Données issues du tableur de recherche et des notices de l’Académie, préparées en novembre 2026.</p><a href="membres.csv" download>Télécharger les données (CSV)</a></details>
+</main>
+<footer>Un outil de recherche indépendant · <a href="https://www.ac-sciences-lettres-montpellier.fr/academie/membres" target="_blank" rel="noopener">Consulter l’annuaire de l’Académie ↗</a></footer>
+<dialog id="profile"><button class="close" id="close" aria-label="Fermer la fiche">×</button><div id="profile-content"></div></dialog>
+</body></html>
